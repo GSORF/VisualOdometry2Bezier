@@ -1,8 +1,8 @@
 # VisualOdometry2Bezier
 
-## Three dimensional trajectory fitting to discrete noisy camera poses by Bézier interpolation: Code Guide
+## Continuous-Time Trajectory Estimation From Noisy Camera Poses Using Cubic Bézier Curves: Code Guide
 
-This document describes the code usage published with the paper ”Three dimensional trajectory fitting to discrete noisy camera poses by Bézier interpolation”. The code is available at https://github.com/GSORF/VisualOdometry2Bezier.
+This document describes the code usage published with the paper ”Continuous-Time Trajectory Estimation From Noisy Camera Poses Using Cubic Bézier Curves”. The code is available at https://github.com/GSORF/VisualOdometry2Bezier.
 
 ![Trajectory3D](/images/Trajectory_3D.jpg)
 
