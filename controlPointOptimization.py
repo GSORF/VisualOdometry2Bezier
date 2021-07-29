@@ -50,7 +50,7 @@ def calcControlPointsUVTan(u, b0, b3, fu, tan, v, tAct, tStart):
 # output:   - [[b1i, b2i], ...] (array by nd.arrays): all estimations for both control points
 def calcControlPointsMeasurement(b0, b3, poses, v, t):
     # calculate u values by time
-    u = np.divide(t, t[-1] - t[0])
+    u = np.divide(t - t[0], t[-1] - t[0])
     b23EstMeasurement = np.zeros((u.__len__(), 6))
 
     # control point estimation
