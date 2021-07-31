@@ -12,11 +12,11 @@ import numpy as np
 # input:    - u (float): u value at current measurement point
 #           - b0 (nd.array): first Bézier point
 #           - b3 (nd.array): second Bézier point
-#           - fu (nd.array): translation camera
-#           - fuDerv (nd.array): fist derivation camera
+#           - fu (nd.array): camera translation / position
+#           - fuDerv (nd.array): first derivation of camera position
 # output:   - [b1, b2] (nd.array): control points
 def calcControlPointsEqSys(u, b0, b3, fu, fuDerv):
-    # right sight equation system
+    # right side equation system
     rs = np.array((fu - (np.power((1-u), 3)*b0) - np.power(u, 3) * b3, fuDerv + (3 * np.power((1 - u), 2) * b0) - (3 * np.power(u, 2) * b3)))
     # left side equation system
     ls = np.array([[3*u*np.power((1-u), 2), 3*np.power(u, 2)*(1-u)], [3*(np.power((1-u), 2)-2*u*(1-u)), 3*(2*u*(1-u)-np.power(u, 2))]])
@@ -24,11 +24,11 @@ def calcControlPointsEqSys(u, b0, b3, fu, fuDerv):
     return np.linalg.solve(ls, rs)
 
 
-# computes fist derivation with velocity and time and calls control point calculation
+# computes first derivation with velocity and time and calls control point calculation
 # input:    - u (float): u value at current measurement point
 #           - b0 (nd.array): first Bézier point
 #           - b3 (nd.array): second Bézier point
-#           - fu (nd.array): translation camera
+#           - fu (nd.array): camera translation / position
 #           - tan (nd.array): norm. tangent at fu
 #           - v (float): absolute velocity at fu
 #           - tAct (float): current time at fu
